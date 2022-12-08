@@ -5,9 +5,10 @@
     <h1>Cooking Master</h1>
     <p>Here you will find a bunch of easy recipes ypu can do with your friends!!.</p>
     <form action="/" method="POST">
-        <input type="text" name="content" id="content" placeholder="Add a new task" required>
-        <input type="submit" value="Add task">
+        <input type="string" name="name" id="name" placeholder="Add a new task" required>
+        <input type="submit" value="Add taskkkkkkk">
     </form>
+    <a href="/add"><button>Add</button></a>
     <table>
         <tr id="titles">
             <th>Name</th>
@@ -17,16 +18,17 @@
             <th>Actions</th>
 
         </tr>
-        {% for task in tasks %} 
+        {% for recipe in recipes %} 
         <tr>
-            <td>{{task.content}}</td>
-            <td>{{task.date_created.date()}}</td>
+            <td>{{recipe.name}}</td>
+            <td>{{recipe.ingredients}}</td>
+            <td>{{recipe.instructions}}</td>
+            <td>{{recipe.favorite}}</td>
             <td>
-                 <a href="/update/{{ task.id }}"><button>Update</button></a>
-                 <a href="/delete/{{ task.id }}"><button>Delete</button></a>
+                 <a href="/update/{{ recipe.id }}"><button>Update</button></a>
+                 <a href="/delete/{{ recipe.id }}"><button>Delete</button></a>
             </td>
-            <td></td>
-            <td></td>
+           
         </tr>
         {% endfor %}
 

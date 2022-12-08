@@ -1,10 +1,7 @@
-{% extends "index.html" %}
-
-{% block head %}
-{% endblock %}
-
+{% extends "base.html" %}
 
 {% block body %}
+
 <div class="content">
     <h1>Task Master</h1>
     <p>Keep track of all the tasks you need to complete</p>
@@ -16,8 +13,8 @@
         </tr>
         {% for recipe in recipes %} 
         <tr>
-            <td>{{recipe.id}}</td>
-            <td>{{recipe.date_created.date()}}</td>
+            <td>{{recipe.name}}</td>
+            <td>{{task.date_created.date()}}</td>
             <td>
                  <a href="/update/{{ recipe.id }}"><button>Update</button></a>
                  <a href="/delete/{{ recipe.id }}"><button>Delete</button></a>
@@ -35,17 +32,24 @@
   <div id="simpleModal" class="modal">
     <div class="modal-content">
       <div class="modal-header">
-        <span class="closeBtn">&times;</span>
-        <h2>Edit Recipe</h2>
+        <h2>Add Recipe</h2>
       </div>
       <div class="modal-body">
         <div class="content">
-            
-            <form action="/update/{{ recipe.id }}" method="POST">
-                <input type="text" name="name" id="name" value="{{ recipe.name }}" required>
-                <input type="text" name="content" id="content" value="{{ recipe.date_created }}" required>
-                <input type="submit" value="Update task">
-            </form>
+
+          <form action="/" method="POST">
+            <p><label for="txtName">Name</label></p>
+          <input type="text" name="name" id="name"  required>
+          <p><label for="txtName">Ingredients</label></p>
+          <input type="text" name="ingredients" id="ingredients"  required>
+          <p><label for="txtName">Instructions</label></p>
+          <input type="text" name="instructions" id="instructions" required>
+          <p><label for="txtName">Favorite</label></p>
+          <input type="checkbox" name="favorite" id="favorite" >
+          <p></p>
+          <input type="submit" value="Add recipe">
+          </form>
+        
         </div>
         </p>
       </div>
@@ -149,4 +153,3 @@
 
 
 {% endblock %}
-
