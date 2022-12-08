@@ -2,12 +2,12 @@ body,
 html {
     margin: 0;
     font-family: 'Segoe UI';
-    background-color: lightblue;
+    background-color: rgb(214, 228, 233);
 }
 
 .content {
     margin: 0 auto;
-    width: 400px;
+    width: 900px;
 }
 
 .h1-title {
@@ -20,8 +20,12 @@ html {
 
 table,
 td,
+
 th {
     border: 1px solid #aaa;
+    
+
+    
 }
 
 table {
@@ -31,8 +35,19 @@ table {
 
 th {
     height: 30px;
+    background-color: #daa30c;
 }
+tr:nth-child(odd) {
 
+    background-color: #dddddd;
+  
+  }
+
+  tr:nth-child(even) {
+
+    background-color: #8eaf84;
+  
+  }
 td {
     text-align: center;
     padding: 5px;
