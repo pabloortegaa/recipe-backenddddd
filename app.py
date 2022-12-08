@@ -57,7 +57,8 @@ def update(id):
         except:
             return 'There was an issue updating your task'
     else:
-        return render_template('update.html', task=task)
+        tasks = Todo.query.order_by(Todo.date_created).all()
+        return render_template('update.html', tasks= tasks,task=task)
 
 if __name__ == '__main__':
     app.run(debug=True)
